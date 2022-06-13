@@ -36,7 +36,7 @@ function pastCitiesDisplay() {
 }
 
 function weatherSearch(lat, lon, city) {
-    var apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=' + lat + '&lon=' + lon + '&appid=' + APIKey
+    var apiUrl = 'http://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=' + lat + '&lon=' + lon + '&appid=' + APIKey
     fetch(apiUrl).then(function (res) {
         return res.json()
     }).then(function (data) {
