@@ -51,7 +51,7 @@ function fiveDayDisplay(fiveDay) {
     weekWeather.empty()
     for (i = 1; i < 6; i++) {
         var newCard = $('<div>')
-        newCard.addClass('col-md-2 border-1 border ms-3')
+        newCard.addClass('col-md-2 border-1 border m-2')
         var date = $('<p>')
         date.text('Date: ' + moment.unix(fiveDay[i].dt).format("MMM Do YY"))
         var humidity = $('<p>')
@@ -59,7 +59,7 @@ function fiveDayDisplay(fiveDay) {
         var temp = $('<p>')
         temp.text('Temperature: ' + fiveDay[i].temp.day)
         var icon = $('<img>')
-        icon.attr('src', 'https://openweathermap.org/img/wn/'+ fiveDay[i].weather[0].icon + '@2x.png')
+        icon.attr('src', 'http://openweathermap.org/img/wn/'+ fiveDay[i].weather[0].icon + '@2x.png')
         var uvi = $('<p>')
         uvi.text('UV Index: ' + fiveDay[i].uvi)
         if (fiveDay[i].uvi < 3 ) {
@@ -90,7 +90,7 @@ function currentWeatherDisplay(current, city) {
     var temp = $('<p>')
     temp.text('Temperature: ' + current.temp)
     var icon = $('<img>')
-    icon.attr('src', 'https://openweathermap.org/img/wn/'+ current.weather[0].icon + '@2x.png')
+    icon.attr('src', 'http://openweathermap.org/img/wn/'+ current.weather[0].icon + '@2x.png')
     var uvi = $('<p>')
     uvi.text('UV Index: ' + current.uvi)
     if (current.uvi < 3 ) {
@@ -106,7 +106,7 @@ function currentWeatherDisplay(current, city) {
 }
 
 function geoSearch(city) {
-    var apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+ city +'&limit=&appid=' + APIKey
+    var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=&appid=' + APIKey
     fetch(apiUrl).then(function (res) {
         return res.json()
     }).then(function (data) {
