@@ -36,7 +36,7 @@ function pastCitiesDisplay() {
 }
 
 function weatherSearch(lat, lon, city) {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=' + lat + '&lon=' + lon + '&appid=' + APIKey
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=' + lat + '&lon=' + lon + '&appid=' + APIKey
     fetch(apiUrl).then(function (res) {
         return res.json()
     }).then(function (data) {
@@ -59,7 +59,7 @@ function fiveDayDisplay(fiveDay) {
         var temp = $('<p>')
         temp.text('Temperature: ' + fiveDay[i].temp.day)
         var icon = $('<img>')
-        icon.attr('src', 'http://openweathermap.org/img/wn/'+ fiveDay[i].weather[0].icon + '@2x.png')
+        icon.attr('src', 'https://openweathermap.org/img/wn/'+ fiveDay[i].weather[0].icon + '@2x.png')
         var uvi = $('<p>')
         uvi.text('UV Index: ' + fiveDay[i].uvi)
         if (fiveDay[i].uvi < 3 ) {
@@ -90,7 +90,7 @@ function currentWeatherDisplay(current, city) {
     var temp = $('<p>')
     temp.text('Temperature: ' + current.temp)
     var icon = $('<img>')
-    icon.attr('src', 'http://openweathermap.org/img/wn/'+ current.weather[0].icon + '@2x.png')
+    icon.attr('src', 'https://openweathermap.org/img/wn/'+ current.weather[0].icon + '@2x.png')
     var uvi = $('<p>')
     uvi.text('UV Index: ' + current.uvi)
     if (current.uvi < 3 ) {
@@ -106,7 +106,7 @@ function currentWeatherDisplay(current, city) {
 }
 
 function geoSearch(city) {
-    var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=&appid=' + APIKey
+    var apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=&appid=' + APIKey
     fetch(apiUrl).then(function (res) {
         return res.json()
     }).then(function (data) {
