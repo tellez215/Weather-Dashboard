@@ -29,6 +29,7 @@ function pastCitiesDisplay() {
     for (let i = 0; i < pastCities.length; i++) {
         const element = pastCities[i];
         var button = $('<button>')
+        button.addClass('btn btn-primary m-1')
         button.text(element)
         pastCitiesEl.append(button)
     }
@@ -50,17 +51,27 @@ function fiveDayDisplay(fiveDay) {
     weekWeather.empty()
     for (i = 1; i < 6; i++) {
         var newCard = $('<div>')
+        newCard.addClass('col-md-2 border-1 border ms-3')
         var date = $('<p>')
         date.text('Date: ' + moment.unix(fiveDay[i].dt).format("MMM Do YY"))
         var humidity = $('<p>')
         humidity.text("Humidity: " + fiveDay[i].humidity)
         var temp = $('<p>')
         temp.text('Temperature: ' + fiveDay[i].temp.day)
+        var icon = $('<img>')
+        icon.attr('src', 'http://openweathermap.org/img/wn/'+ fiveDay[i].weather[0].icon + '@2x.png')
         var uvi = $('<p>')
         uvi.text('UV Index: ' + fiveDay[i].uvi)
+        if (fiveDay[i].uvi < 3 ) {
+            uvi.css('background-color', 'green')
+        } else if (fiveDay[i].uvi < 8 && fiveDay[i].uvi > 2) {
+            uvi.css('background-color', 'yellow')
+        } else {
+            uvi.css('background-color', 'red')
+        }
         var windSpeed = $('<p>')
         windSpeed.text('Wind Speed: ' + fiveDay[i].wind_speed)
-        newCard.append(date, humidity, temp, uvi, windSpeed)
+        newCard.append(date, humidity, temp,icon, uvi, windSpeed)
         weekWeather.append(newCard)
     }
 
@@ -78,11 +89,20 @@ function currentWeatherDisplay(current, city) {
     humidity.text("Humidity: " + current.humidity)
     var temp = $('<p>')
     temp.text('Temperature: ' + current.temp)
+    var icon = $('<img>')
+    icon.attr('src', 'http://openweathermap.org/img/wn/'+ current.weather[0].icon + '@2x.png')
     var uvi = $('<p>')
     uvi.text('UV Index: ' + current.uvi)
+    if (current.uvi < 3 ) {
+        uvi.css('background-color', 'green')
+    } else if (current.uvi < 8 && current.uvi > 2) {
+        uvi.css('background-color', 'yellow')
+    } else {
+        uvi.css('background-color', 'red')
+    }
     var windSpeed = $('<p>')
     windSpeed.text('Wind Speed: ' + current.wind_speed)
-    currentEl.append(cityName, date, humidity, temp, uvi, windSpeed)
+    currentEl.append(cityName, date, humidity, temp ,icon, uvi, windSpeed)
 }
 
 function geoSearch(city) {

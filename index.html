@@ -13,45 +13,46 @@
 </head>
 
 <body>
-    <header>
-        <h1><em>WeatherDashboard</em></h1>
-    </header>
-    <!-- template from bootstrap -->
-    <div class="card" style="width: 18rem ;">
-        <div class="card-body bg-light">
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
-            <div class="input-group mb-3">
-                <form class="row g-3">
-                    <div class="col-auto">
-                        <label class="visually-hidden">Search For City</label>
-                        <input class="form-control" id="citySearch" placeholder="Search For City">
-                    </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3" id="searchBtn">Search</button>
-                    </div>
-                </form>
-            </div>
-            <div id="pastCities">
+    <div class="container">
+        <header>
+            <h1><em>WeatherDashboard</em></h1>
+        </header>
+        <!-- template from bootstrap -->
+        <div class="card" style="width: 18rem ;">
+            <div class="card-body bg-light">
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <div class="input-group mb-3">
+                    <form class="row g-3">
+                        <div class="col-auto">
+                            <label class="visually-hidden">Search For City</label>
+                            <input class="form-control" id="citySearch" placeholder="Search For City">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3" id="searchBtn">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="pastCities">
 
-            </div>
-        </div>
-    </div>
-    <div class="col mt-4 mr-5">
-        <div class="card currentCard pb-2 pt-1">
-            <h5 class="card-title mt-2 text-center">Current Weather</h5>
-            <div id="currentWeather">
-
-            </div>
-        </div>
-    </div>
-    <!-- appends 5 day forecast -->
-    <div class="row">
-        <div class="col mt-4">
-            <div class="card pb-5 fiveDays pl-5">
-                <h5 class="card-title mt-2 mr-5">5 day forecast</h5>
-                <div class="row" id="fiveDay">
                 </div>
             </div>
+        </div>
+        <div class="col mt-4 mr-5">
+            <div class="card currentCard pb-2 pt-1">
+                <h5 class="card-title mt-2 text-center">Current Weather</h5>
+                <div id="currentWeather">
+
+                </div>
+            </div>
+        </div>
+        <!-- appends 5 day forecast -->
+        <div class="row">
+            <div class="col mt-4">
+                <div class="card pb-5 fiveDays pl-5">
+                    <h5 class="card-title mt-2 mr-5">5 day forecast</h5>
+                    <div class="row" id="fiveDay">
+                    </div>
+                </div>
 
 
 
@@ -68,7 +69,7 @@
 
 
 
-
+            </div>
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
